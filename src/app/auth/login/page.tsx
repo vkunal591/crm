@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
 import { Post } from "@/hooks/apiUtils";
 import { useAuth } from "@/context/AuthContext";

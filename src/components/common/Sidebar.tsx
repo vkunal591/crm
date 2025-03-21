@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { tabs } from "@/data/tabs";
 import React, { useState } from "react";
 import { usePathname } from "next/navigation";

@@ -112,7 +112,7 @@ const SubcategoryForm: React.FC<SubcategoryFormProps> = (props) => {
           <option value="">Select Category</option>
           {
             category && category?.map((data: any, index: any) => (
-              <option value={data?._id}>{data?.name}</option>
+              <option key={index} value={data?._id}>{data?.name}</option>
             ))
           }
 

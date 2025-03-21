@@ -1,10 +1,8 @@
-import { FaProductHunt, FaSliders } from "react-icons/fa6";
-import { TbPackageExport, TbPackageOff, TbPackages } from "react-icons/tb";
-import { RiAdminFill } from "react-icons/ri";
-import { GrBlog, GrFormCheckmark, GrPhone, GrTransaction } from "react-icons/gr";
-import { FaBlog, FaFile, FaHome, FaUser,FaBoxOpen } from "react-icons/fa";
+import { FaSliders } from "react-icons/fa6";
+import { TbPackages } from "react-icons/tb";
+import {FaBoxOpen } from "react-icons/fa";
 import { FaQuestionCircle } from "react-icons/fa";
-import { MdRateReview, MdManageAccounts, MdProductionQuantityLimits } from "react-icons/md";
+import {  MdProductionQuantityLimits } from "react-icons/md";
 
 // Define tabs
 export const tabs = [
