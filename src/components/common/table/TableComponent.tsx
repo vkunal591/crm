@@ -64,7 +64,8 @@ const Table: React.FC<TableProps> = ({
       isDate?: boolean;
       isPercent?: string;
       isCurrency?: string;
-      isActive?:boolean
+      isActive?: boolean;
+      subKey?: string;
     }
   ) => {
     const value = row[col.key];
@@ -73,10 +74,8 @@ const Table: React.FC<TableProps> = ({
     if (col.isDate && value) return dayjs(value).format("YYYY-MM-DD");
     if (col.isCurrency && value) return `${col.isCurrency} ${value}`;
     if (col.isPercent) return `${value} ${col.isPercent}`;
-    if (col.isActive) return  `${value?"Active":"isActive"}`
-      
-    
-
+    if (col.isActive) return `${value ? "Active" : "isActive"}`
+    if (col.subKey) return value[col.subKey]
     if (typeof value === "number") return value;
     if (typeof value === "boolean") return value.toString();
 
@@ -113,7 +112,7 @@ const Table: React.FC<TableProps> = ({
                 )}
               </th>
             ))}
-            {operationsAllowed?.read && (
+            {operationsAllowed?.read && type !== "Order" && (
               <th className="p-4 border text-left text-black border-gray-200 font-bold">
                 Actions
               </th>
@@ -130,25 +129,23 @@ const Table: React.FC<TableProps> = ({
                 {columns.map((col) => (
                   <td
                     key={col.key}
-                    className={`text-sm border whitespace-nowrap border-gray-200 px-4 py-3 ${col?.isActive || col.isBadge? "text-center":""}`}
+                    className={`text-sm border whitespace-nowrap border-gray-200 px-4 py-3 ${col?.isActive || col.isBadge ? "text-center" : ""}`}
                   >
                     {col.isBadge && (
                       <span
-                        className={`${
-                          col.isBadge &&
+                        className={`${col.isBadge &&
                           "inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-green-600 ring-1 ring-green-500/10 ring-inset"
-                        }}`}
+                          }}`}
                       >
                         {formatRowValue(row, col)}
                       </span>
                     )}
                     {col.isActive && (
                       <span
-                        className={` ${
-                          col.isActive && row[col.key]
+                        className={` ${col.isActive && row[col.key]
                             ? "inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-green-600 ring-1 ring-green-500/10 ring-inset"
                             : "inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-red-600 ring-1 ring-red-500/10 ring-inset"
-                        }}`}
+                          }}`}
                       >
                         {formatRowValue(row, col)}
                       </span>
@@ -156,7 +153,7 @@ const Table: React.FC<TableProps> = ({
                     {(!col.isBadge && !col.isActive) && formatRowValue(row, col)}
                   </td>
                 ))}
-                {operationsAllowed?.read && (
+                {operationsAllowed?.read &&  type !== "Order" && (
                   <td className="text-nowrap border border-gray-200 px-4 py-3">
                     <Actions
                       row={row}

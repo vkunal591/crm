@@ -24,14 +24,14 @@ export const tabs = [
     pageTitle: "Manage Category",
     permission: "Manage Category",
   },
-  {
-    id: 1,
-    icon: TbPackageExport,
-    label: "Manage Sub Category",
-    pageTitle: "Mange Sub Category",
-    permission: "Manage Subcategory",
-    href: "/dashboard/sub-category",
-  },
+  // {
+  //   id: 1,
+  //   icon: TbPackageExport,
+  //   label: "Manage Subcategory",
+  //   pageTitle: "Mange Subcategory",
+  //   permission: "Manage Subcategory",
+  //   href: "/dashboard/sub-category",
+  // },
   {
     id: 7,
     icon: MdProductionQuantityLimits,

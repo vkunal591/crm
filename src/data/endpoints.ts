@@ -152,6 +152,22 @@ export const endpoints: Record<
     fetchAll: "api/order", // to fetch all transaction
     operations: operations,
   },
+  Category: {
+    create: "api/category", // to create a transaction
+    delete: "api/category/", // to delete a transaction
+    update: "api/category/", // to update a transaction
+    read: "api/category/", // to get a transaction
+    fetchAll: "api/category", // to fetch all transaction
+    operations: operations,
+  },
+  Subcategory: {
+    create: "api/subcategory", // to create a transaction
+    delete: "api/subcategory/", // to delete a transaction
+    update: "api/subcategory/", // to update a transaction
+    read: "api/subcategory/", // to get a transaction
+    fetchAll: "api/subcategory", // to fetch all transaction
+    operations: operations,
+  },
   Employee: {
     create: "api/user/create-user", // to create a user
     delete: "api/user/", // to delete a user

@@ -11,22 +11,21 @@ import TableComponent from "@/components/common/Table";
 
 const columns = [
   { "key": "_id", "label": "Order ID" },
-  { "key": "user", "label": "User", sortable: true },
+  { "key": "user", "subKey": "name", "label": "User", sortable: true },
+  // { "key": "user", "subKey": "email", "label": "Email", sortable: true },
   { "key": "totalAmount", "label": "Total Amount", sortable: true },
-  { "key": "status", "label": "Status", sortable: true,isBadge:true },
+  { "key": "status", "label": "Status", sortable: true, isBadge: true },
   { "key": "createdAt", "label": "Date", sortable: true, isDate: true },
 ];
 
 const filterOptions = [
-  { label: "User", value: "user" },
-  { label: "Status", value: "isActive" },
+  { label: "Status", value: "status" },
 ];
 
 const Banners: React.FC = () => {
   const { data, loading, error } = useFetch(endpoints["Order"].fetchAll);
   const updatedData = data?.data.result;
   const paginationData = data?.data?.pagination;
-
   const { user } = useAuth();
   const operationsAllowed = getAccessPoints(user, "Manage Orders");
 

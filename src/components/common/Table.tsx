@@ -11,6 +11,7 @@ import Table from "./table/TableComponent";
 import Pagination from "./table/Pagination";
 import { endpoints } from "@/data/endpoints";
 import React, { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 interface TableColumn {
   key: string;
@@ -46,6 +47,7 @@ const TableComponent = <T extends { [key: string]: any }>({
   pagination_data,
   operationsAllowed,
 }: TableProps) => {
+  const path = usePathname()
   const [manage, setManage] = useState(false);
   const [paginate, setPaginate] = useState<Pagination>({
     totalPages: pagination_data?.totalPages ?? 1,
@@ -157,6 +159,12 @@ const TableComponent = <T extends { [key: string]: any }>({
     }
   };
 
+
+  useEffect(() => {
+    fetchFilteredData()
+  }, [path]);
+
+
   useEffect(() => {
     if (isModalVisible) {
       document.body.style.overflow = "hidden"; // prevent overflow
@@ -186,8 +194,8 @@ const TableComponent = <T extends { [key: string]: any }>({
           formConfig
             ? ""
             : formData._id
-            ? (type !== "Order" ? "Edit " : "View ") + type + (manage? " Content":"")
-            : "Add " + type +  (manage? " Content":"")
+              ? (type !== "Order" ? "Edit " : "View ") + type + (manage ? " Content" : "")
+              : "Add " + type + (manage ? " Content" : "")
         }
         isVisible={isModalVisible}
         onClose={handleCloseModal}

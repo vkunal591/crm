@@ -13,7 +13,7 @@ const columns = [
   { key: "_id", label: "Employee ID" },
   { key: "name", label: "Product Name", sortable: true },
   { key: "description", label: "Description", sortable: false },
-  { key: "slug", label: "Slug", sortable: true },
+  { key: "stock", label: "Stock", sortable: true },
   { key: "price", label: "Price", sortable: true },
   { key: "createdAt", label: "Date", sortable: true, isDate: true },
   { key: "updatedAt", label: "Updated At", sortable: true, isDate: true },

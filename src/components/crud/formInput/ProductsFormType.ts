@@ -2,6 +2,13 @@ import { FormField } from "@/hooks/types";
 
 export const ProductsFormType: FormField[] = [
   {
+    name: "category",
+    type: "select",
+    required: true,
+    label: "Category",
+    placeholder: "Select category",
+  },
+  {
     name: "name",
     type: "text",
     required: true,
@@ -9,11 +16,11 @@ export const ProductsFormType: FormField[] = [
     placeholder: "Enter product name",
   },
   {
-    name: "slug",
-    type: "text",
+    name: "stock",
+    type: "number",
     required: true,
-    label: "Slug",
-    placeholder: "Enter slug",
+    label: "Stock",
+    placeholder: "Enter Stock",
   },
   {
     name: "price",
@@ -29,7 +36,7 @@ export const ProductsFormType: FormField[] = [
     widthFull: true,
   },
   {
-    name: "image",
+    name: "images",
     type: "file",
     label: "Image",
     widthFull: true,

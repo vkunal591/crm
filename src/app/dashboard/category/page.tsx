@@ -11,9 +11,7 @@ import TableComponent from "@/components/common/Table";
 
 const columns = [
   { "key": "_id", "label": "Order ID" },
-  { "key": "user", "label": "User", sortable: true },
-  { "key": "totalAmount", "label": "Total Amount", sortable: true },
-  { "key": "status", "label": "Status", sortable: true,isBadge:true },
+  { "key": "name", "label": "Main Category", sortable: true },
   { "key": "createdAt", "label": "Date", sortable: true, isDate: true },
 ];
 
@@ -23,7 +21,7 @@ const filterOptions = [
 ];
 
 const Banners: React.FC = () => {
-  const { data, loading, error } = useFetch(endpoints["category"].fetchAll);
+  const { data, loading, error } = useFetch(endpoints["Category"].fetchAll);
   const updatedData = data?.data.result;
   const paginationData = data?.data?.pagination;
 

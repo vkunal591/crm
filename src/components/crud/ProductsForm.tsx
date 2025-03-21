@@ -36,12 +36,12 @@ const ProductsForm: React.FC<ProductsProps> = (props: any) => {
   useEffect(() => {
     const fetchEmployees = async () => {
       try {
-        const url = "/api/user/public-role/Salesperson";
+        const url = "/api/category";
         const response: any = await Fetch(url, {}, 5000, true, false);
-        if (response.success && response?.data.length > 0) {
-          const selectData = getSelectFormattedData(response.data);
+        if (response.success && response?.data?.result.length > 0) {
+          const selectData = getSelectFormattedData(response.data?.result);
           const updatedFormField = formField.map((obj: any) => {
-            if (obj.name === "groupBy") return { ...obj, options: selectData };
+            if (obj.name === "category") return { ...obj, options: selectData };
             return obj;
           });
           setFormFields(updatedFormField);

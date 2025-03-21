@@ -7,6 +7,8 @@ import PagesForm from "../crud/PagesForm";
 import BannerForm from "../crud/BannerForm";
 import NewsForm from "../crud/NewsForm";
 import ProductsForm from "../crud/ProductsForm";
+import CategoryForm from "../crud/CategoryFrom";
+import SubCategoryForm from "../crud/SubCategoryFrom";
 
 interface FormRendererProps {
   data: any;
@@ -38,6 +40,10 @@ const FormRenderer: React.FC<FormRendererProps> = (props: any) => {
       return <NewsForm {...props} />;
     case "Products":
       return <ProductsForm {...props} />;
+    case "Category":
+      return <CategoryForm {...props} />;
+    case "Subcategory":
+      return <SubCategoryForm {...props} />;
     default:
       return <div>No Form Exist</div>;
   }
