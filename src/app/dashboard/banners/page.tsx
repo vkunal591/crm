@@ -12,16 +12,13 @@ import TableComponent from "@/components/common/Table";
 const columns = [
   { key: "_id", label: "Employee ID" },
   { key: "title", label: "Title", sortable: true },
-  { key: "subTitle", label: "Sub Title", sortable: true },
   { key: "description", label: "Description", sortable: true },
-  { key: "isActive", label: "Active Status", sortable: true, isActive: true },
+  // { key: "isActive", label: "Active Status", sortable: true, isActive: true },
   { key: "createdAt", label: "Date", sortable: true, isDate: true },
   { key: "updatedAt", label: "Last Updated", sortable: true, isDate: true },
 ];
 
 const filterOptions = [
-  { label: "Title", value: "title" },
-  { label: "Sub Title", value: "subTitle" },
   { label: "Status", value: "isActive" },
 ];
 

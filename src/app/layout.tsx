@@ -10,8 +10,8 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"; // Import Toastify styles
 
 export const metadata: Metadata = {
-  title: "SkyField | Admin Panel",
-  description: "SkyField.",
+  title: "Silk India | Admin Panel",
+  description: "Silk.",
 };
 
 // Configure the Poppins font

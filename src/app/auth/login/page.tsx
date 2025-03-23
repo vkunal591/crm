@@ -17,7 +17,7 @@ const Login: React.FC = () => {
     try {
       const response: any = await Post(
         "/api/auth/admin/login",
-        { email, password },
+        { mobileNo: email, password },
         5000
       );
       if (response?.success) {
@@ -39,7 +39,7 @@ const Login: React.FC = () => {
           <div
             className="absolute top-0 left-0 w-full h-full bg-cover bg-center"
             style={{
-              backgroundImage: "url('/assets/bg/silk.png')"
+              backgroundImage: "url('/assets/bg/silk.jpeg')"
             }}
           ></div>
 
@@ -70,7 +70,7 @@ const Login: React.FC = () => {
               <div>
                 <label className="block text-white text-sm mb-2">Email</label>
                 <input
-                  type="email"
+                  type="number"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email"

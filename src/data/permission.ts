@@ -54,5 +54,14 @@ export const userPermissions = [
       delete: true,
     },
   },
+  {
+    module: "Manage Banners",
+    access: {
+      read: true,
+      create: true,
+      update: true,
+      delete: true,
+    },
+  },
 
 ];

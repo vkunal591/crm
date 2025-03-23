@@ -7,7 +7,7 @@ import { FormEvent, ChangeEvent, useState } from "react";
 import { endpoints } from "@/data/endpoints";
 import { Fetch, Post, Put } from "@/hooks/apiUtils";
 import ImageUpload from "../common/ImageUpload";
-import ToggleButton from "../common/ToggleButton";
+
 
 interface BannersFormProps {
   onClose?: any;
@@ -92,7 +92,7 @@ const BannersForm: React.FC<BannersFormProps> = (props) => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
         <div className="flex flex-col col-span-3">
           <div className=" p-3 mb-2">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-1   gap-4">
               <div className="flex flex-col mb-2">
                 <label htmlFor={`title`} className="">
                   Title
@@ -107,7 +107,7 @@ const BannersForm: React.FC<BannersFormProps> = (props) => {
                 />
               </div>
 
-              <div className="flex flex-col mb-2">
+              {/* <div className="flex flex-col mb-2">
                 <label htmlFor={`subTitle`} className="">
                   Sub Title
                 </label>
@@ -119,7 +119,7 @@ const BannersForm: React.FC<BannersFormProps> = (props) => {
                   onChange={(e) => handleChange(e)}
                   className="p-2 border border-gray-300 rounded-lg outline-none"
                 />
-              </div>
+              </div> */}
             </div>
 
             <div className="flex flex-col mb-2">
@@ -145,12 +145,12 @@ const BannersForm: React.FC<BannersFormProps> = (props) => {
         setState={setForm}
         fieldname={"image"}
       />
-      <div className="flex flex-col col-span-2 mt-2">
+      {/* <div className="flex flex-col col-span-2 mt-2">
         <label htmlFor="isActive" className="mb-2 font-semibold text-gray-700">
           Do you want to activate this banner post?
         </label>
         <ToggleButton setState={setForm} data={form.isActive} />
-      </div>
+      </div> */}
       <div className="flex justify-start mt-3 items-center space-x-2">
         <button
           type="submit"

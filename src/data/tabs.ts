@@ -42,10 +42,10 @@ export const tabs = [
   {
     id: 14,
     icon: FaSliders,
-    label: "Manage NewsLatter",
-    href: "/dashboard/news-latter",
-    pageTitle: "All News Latter",
-    permission: "Manage NewsLatter",
+    label: "Manage Banners",
+    href: "/dashboard/banners",
+    pageTitle: "All Banners",
+    permission: "Manage Banners",
   },
   {
     id: 10,
