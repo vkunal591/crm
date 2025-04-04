@@ -33,7 +33,7 @@ export default function RootLayout({
         <AuthProvider>
           <div className="flex">
             <Sidebar />
-            <div className="flex-1 w-[83%] border-l border-secondary">
+            <div className="flex-1 w-[83%]">
               <Navbar />
               <main>{children}</main>
               <div id="modal-root"></div>

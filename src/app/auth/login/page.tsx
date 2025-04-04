@@ -17,7 +17,7 @@ const Login: React.FC = () => {
     try {
       const response: any = await Post(
         "/api/auth/admin/login",
-        { mobileNo: email, password },
+        { mobile: email, password },
         5000
       );
       if (response?.success) {
@@ -39,7 +39,7 @@ const Login: React.FC = () => {
           <div
             className="absolute top-0 left-0 w-full h-full bg-cover bg-center"
             style={{
-              backgroundImage: "url('/assets/bg/silk.jpeg')"
+              backgroundImage: "url('/assets/bg/silk.jpeg')",
             }}
           ></div>
 
@@ -61,19 +61,21 @@ const Login: React.FC = () => {
               />
             </div> */}
             <h2 className="text-white text-center text-2xl font-semibold mb-6">
-              Welcome Back
+              Welcome To Silk India
             </h2>
 
             {/* Form */}
             <form onSubmit={handleSubmit} className="space-y-4">
               {/* Email Input */}
               <div>
-                <label className="block text-white text-sm mb-2">Email</label>
+                <label className="block text-white text-sm mb-2">
+                  Phone Number
+                </label>
                 <input
                   type="number"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your email"
+                  placeholder="Enter your number"
                   required
                   className="w-full px-4 py-2 rounded-md bg-white/20 text-white placeholder-gray-300 outline-none focus:ring-2 focus:ring-blue-400"
                 />
@@ -109,7 +111,7 @@ const Login: React.FC = () => {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full flex items-center justify-center gap-2 bg-gray-800 hover:bg-gray-900 text-white py-3 rounded-md transition"
+                className="w-full flex items-center justify-center gap-2 bg-primary hover:bg-gray-900 text-white py-3 rounded-md transition"
               >
                 <IoLogInOutline size={20} />
                 Proceed to Dashboard
