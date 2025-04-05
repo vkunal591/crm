@@ -17,7 +17,7 @@ const Login: React.FC = () => {
     try {
       const response: any = await Post(
         "/api/auth/admin/login",
-        { mobile: email, password },
+        { mobileNo: email, password },
         5000
       );
       if (response?.success) {
