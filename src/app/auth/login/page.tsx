@@ -17,7 +17,7 @@ const Login: React.FC = () => {
     try {
       const response: any = await Post(
         "/api/auth/admin/login",
-        { mobileNo: email, password },
+        { email: email, password },
         5000
       );
       if (response?.success) {
@@ -72,7 +72,7 @@ const Login: React.FC = () => {
                   Phone Number
                 </label>
                 <input
-                  type="number"
+                  type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your number"
