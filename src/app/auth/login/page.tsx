@@ -37,9 +37,9 @@ const Login: React.FC = () => {
           {/* Video Background */}
           {/* Background Image */}
           <div
-            className="absolute top-0 left-0 w-full h-full bg-cover bg-center"
+            className="absolute top-0 left-0 w-full h-full bg-cover bg-no-repeat bg-center "
             style={{
-              backgroundImage: "url('/assets/bg/silk.jpeg')",
+              backgroundImage: "url('/assets/bg/SILK.svg')",
             }}
           ></div>
 
@@ -47,7 +47,7 @@ const Login: React.FC = () => {
           <div className="absolute top-0 left-0 w-full h-full bg-black/40"></div>
 
           {/* Glassmorphic Form Container */}
-          <div className="relative bg-white/20 backdrop-blur-lg p-8 rounded-xl max-w-md w-full">
+          <div className="relative bg-white/20 backdrop-blur-sm p-8 rounded-xl max-w-md w-full">
             {/* Logo */}
             {/* <div className="text-center mb-6">
               <Image
