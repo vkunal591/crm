@@ -13,13 +13,12 @@ const columns = [
   { key: "_id", label: "Order ID" },
   { key: "userName", label: "User", sortable: true },
   { key: "totalAmount", label: "Total Amount", sortable: true },
+  {
+    key: "mobileNo",
+    label: "Mobile No",
+  },
   { key: "status", label: "Status", sortable: true, isBadge: true },
   { key: "createdAt", label: "Date", sortable: true, isDate: true },
-  // {
-  //   key: "items",
-  //   subKey: "product.name",
-  //   label: "Product Name",
-  // },
   // {
   //   key: "items",
   //   subKey: "product.price",
