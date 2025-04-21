@@ -4,16 +4,12 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       {
+        protocol: "http",
+        hostname: "server.silkindia.co.in",
+      },
+      {
         protocol: "https",
-        hostname: "toy-erp.s3.ap-south-1.amazonaws.com",
-      },
-      {
-        protocol: "http",
-        hostname: "192.168.0.153",
-      },
-      {
-        protocol: "http",
-        hostname: "localhost",
+        hostname: "server.silkindia.co.in",
       },
     ],
   },

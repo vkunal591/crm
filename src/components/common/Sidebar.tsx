@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import { useAuth } from "@/context/AuthContext";
 import { userPermissions } from "@/data/permission";
 import { RiArrowDropDownLine } from "react-icons/ri";
+import Image from "next/image";
 
 const Sidebar: React.FC = () => {
   const pathname = usePathname();
@@ -30,18 +31,18 @@ const Sidebar: React.FC = () => {
       className={`fixed w-[17%] text-white bg-primary h-full overflow-y-scroll no-scrollbar`}
     >
       <div className="flex justify-center text-2xl border-b border-b-secondary bg-primary w-[17%] items-center py-[11px] fixed top-0">
-        {/* <Image
+        <Image
           priority
           width={150}
           height={50}
           alt="Silk Logo"
           unoptimized
-          className="h-10"
-          src={"/assets/bg/silk.png"}
-        /> */}
-        Silk India
+          className="h-32 object-cover drop-shadow-xs drop "
+          src={"/assets/bg/silklogo.SVG"}
+        />
+        {/* Silk India */}
       </div>
-      <nav className="flex flex-col gap-2 justify-center items-center mt-[72px] mb-40">
+      <nav className="flex flex-col gap-2 justify-center items-center mt-[170px] mb-40">
         {filteredTabs.map((tab: any) => {
           const Icon = tab.icon;
           return (

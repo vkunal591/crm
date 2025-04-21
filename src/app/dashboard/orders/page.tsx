@@ -10,17 +10,35 @@ import { getAccessPoints } from "@/hooks/general";
 import TableComponent from "@/components/common/Table";
 
 const columns = [
-  { "key": "_id", "label": "Order ID" },
-  { "key": "user", "subKey": "name", "label": "User", sortable: true },
-  // { "key": "user", "subKey": "email", "label": "Email", sortable: true },
-  { "key": "totalAmount", "label": "Total Amount", sortable: true },
-  { "key": "status", "label": "Status", sortable: true, isBadge: true },
-  { "key": "createdAt", "label": "Date", sortable: true, isDate: true },
+  { key: "_id", label: "Order ID" },
+  { key: "userName", label: "User", sortable: true },
+  { key: "totalAmount", label: "Total Amount", sortable: true },
+  { key: "status", label: "Status", sortable: true, isBadge: true },
+  { key: "createdAt", label: "Date", sortable: true, isDate: true },
+  // {
+  //   key: "items",
+  //   subKey: "product.name",
+  //   label: "Product Name",
+  // },
+  // {
+  //   key: "items",
+  //   subKey: "product.price",
+  //   label: "Price",
+  // },
+  // {
+  //   key: "items",
+  //   subKey: "quantity",
+  //   label: "Quantity",
+  // },
+  { key: "streetAddress", label: "Street Address" },
+  { key: "city", label: "City" },
+  { key: "landMark", label: "Landmark" },
+  { key: "state", label: "State" },
+  { key: "country", label: "Country" },
+  { key: "pincode", label: "Pincode" },
 ];
 
-const filterOptions = [
-  { label: "Status", value: "status" },
-];
+const filterOptions = [{ label: "Status", value: "status" }];
 
 const Banners: React.FC = () => {
   const { data, loading, error } = useFetch(endpoints["Order"].fetchAll);
