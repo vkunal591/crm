@@ -4,7 +4,7 @@ import { IoLogOutOutline } from "react-icons/io5";
 const Profile = () => {
   const { user, logout } = useAuth();
   return (
-    <div className="group relative">
+    <div className="group relative text-center">
       <p className="uppercase min-h-7 cursor-pointer min-w-7 h-7 w-7 flex justify-center items-center text-lg font-bold aspect-square rounded-full bg-primary text-white">
         {user?.name.charAt(0)}
       </p>

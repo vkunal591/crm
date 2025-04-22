@@ -38,7 +38,7 @@ const Sidebar: React.FC = () => {
           alt="Silk Logo"
           unoptimized
           className="h-32 object-cover drop-shadow-xs drop "
-          src={"/assets/bg/silklogo.SVG"}
+          src={"/assets/bg/silklogo.svg"}
         />
         {/* Silk India */}
       </div>

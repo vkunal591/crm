@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Post } from "@/hooks/apiUtils";
 import { useAuth } from "@/context/AuthContext";
 import { IoEye, IoEyeOff, IoLogInOutline } from "react-icons/io5";
+import Image from "next/image";
 
 const Login: React.FC = () => {
   const { token, login } = useAuth();
@@ -33,33 +34,33 @@ const Login: React.FC = () => {
   return (
     <>
       {!token && (
-        <div className="relative min-h-screen flex justify-center items-center bg-gray-100">
+        <div className="relative min-h-screen flex flex-col justify-center items-center bg-[#e5007e]">
           {/* Video Background */}
           {/* Background Image */}
-          <div
+          {/* <div
             className="absolute top-0 left-0 w-full h-full bg-cover bg-no-repeat bg-center "
-            style={{
-              backgroundImage: "url('/assets/bg/SILK.svg')",
-            }}
-          ></div>
+            // style={{
+            //   backgroundImage: "url('/assets/bg/SILK.svg')",
+            // }}
+          ></div> */}
 
           {/* Overlay for better readability */}
-          <div className="absolute top-0 left-0 w-full h-full bg-black/40"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-black/0"></div>
 
           {/* Glassmorphic Form Container */}
-          <div className="relative bg-white/20 backdrop-blur-sm p-8 rounded-xl max-w-md w-full">
+          <div className="relative bg-white/2 backdrop-blur-s p-8 rounded-xl max-w-md w-full">
             {/* Logo */}
-            {/* <div className="text-center mb-6">
+            <div className="text-center mb-6">
               <Image
-                src="/assets/bg/silk.png"
+                src="/assets/bg/silklogo.svg"
                 alt="logo"
-                width={150}
-                height={50}
+                width={250}
+                height={150}
                 priority
                 unoptimized
-                className="mx-auto h-16"
+                className="mx-auto h-32 object-fill"
               />
-            </div> */}
+            </div>
             <h2 className="text-white text-center text-2xl font-semibold mb-6">
               Welcome To Silk India
             </h2>
@@ -68,9 +69,7 @@ const Login: React.FC = () => {
             <form onSubmit={handleSubmit} className="space-y-4">
               {/* Email Input */}
               <div>
-                <label className="block text-white text-sm mb-2">
-                  Phone Number
-                </label>
+                <label className="block text-white text-sm mb-2">User Id</label>
                 <input
                   type="email"
                   value={email}
@@ -111,13 +110,15 @@ const Login: React.FC = () => {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full flex items-center justify-center gap-2 bg-primary hover:bg-gray-900 text-white py-3 rounded-md transition"
+                className="w-full flex items-center justify-center gap-2 bg-gray-800 hover:bg-gray-900 text-white py-3 rounded-md transition"
               >
                 <IoLogInOutline size={20} />
                 Proceed to Dashboard
               </button>
             </form>
           </div>
+
+          <p className="text-white">© 2025 | Powered by SilkIndia | Developed by VXTRY Industry</p>
         </div>
       )}
     </>
