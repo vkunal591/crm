@@ -153,7 +153,7 @@ const Table: React.FC<TableProps> = ({
                     {(!col.isBadge && !col.isActive) && formatRowValue(row, col)}
                   </td>
                 ))}
-                {operationsAllowed?.read &&  type !== "Order" && (
+                {operationsAllowed?.read && (
                   <td className="text-nowrap border border-gray-200 px-4 py-3">
                     <Actions
                       row={row}

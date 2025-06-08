@@ -13,7 +13,7 @@ export const userPermissions = [
     access: {
       read: true,
       // create: true,
-      // update: true,
+      update: true,
       write:true,
       delete: true,
     },

@@ -41,19 +41,29 @@ const Actions: React.FC<ActionsProps> = ({
 
   const handleEdit = async (id?: string) => {
     if (!id) return;
-
     try {
       const endpoint = endpoints[type]?.read;
 
       if (!endpoint) return;
-
-      const response: any = await Fetch(`${endpoint}${id}`, {}, 5000, true);
-      if (
-        response?.success &&
-        (response?.data?._id || response?.data?.result?._id)
-      ) {
-        setData(response.data.result ? response.data.result : response.data);
-      } else setData({});
+      if (type === "Order") {
+        const response: any = await Fetch(`${endpoint}${id}`, {}, 5000, true);
+        console.log(response);
+        if (
+          response?.success &&
+          (response?.data?._id || response?.data?.result?._id ||  response?.data?.result[0]?._id)
+        ) {
+          setData(response.data.result ? response.data.result[0] : response.data);
+        } else setData({});
+      } else {
+        const response: any = await Fetch(`${endpoint}${id}`, {}, 5000, true);
+        console.log(response);
+        if (
+          response?.success &&
+          (response?.data?._id || response?.data?.result?._id)
+        ) {
+          setData(response.data.result ? response.data.result : response.data);
+        } else setData({});
+      }
       setIsModalVisible(true);
     } catch (error) {
       console.log("Handle Edit", error);
@@ -73,7 +83,7 @@ const Actions: React.FC<ActionsProps> = ({
         (response?.data?._id || response?.data?.result?._id)
       ) {
         setManage(true);
-         setData(response.data.result ? response.data.result : response.data);
+        setData(response.data.result ? response.data.result : response.data);
       } else setData({});
       setIsModalVisible(true);
     } catch (error) {
@@ -135,17 +145,14 @@ const Actions: React.FC<ActionsProps> = ({
           <FaList title="Manage" />
         </button>
       )}
-      {operationsAllowed?.delete &&
-        type !== "User" &&
-        type !== "Employee" &&
-        type !== "Order" && (
-          <button
-            onClick={() => handleDelete(row._id)}
-            className="text-red-700 text-xl hover:scale-125 hover:p-1 hover:bg-red-100 p-1 rounded transition"
-          >
-            <FaTrash title="Delete" />
-          </button>
-        )}
+      {operationsAllowed?.delete && type !== "User" && type !== "Employee" && (
+        <button
+          onClick={() => handleDelete(row._id)}
+          className="text-red-700 text-xl hover:scale-125 hover:p-1 hover:bg-red-100 p-1 rounded transition"
+        >
+          <FaTrash title="Delete" />
+        </button>
+      )}
     </>
   );
 };

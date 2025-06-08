@@ -9,6 +9,7 @@ import NewsForm from "../crud/NewsForm";
 import ProductsForm from "../crud/ProductsForm";
 import CategoryForm from "../crud/CategoryFrom";
 import SubCategoryForm from "../crud/SubCategoryFrom";
+import OrderForm from "../crud/OrderForm";
 
 interface FormRendererProps {
   data: any;
@@ -38,6 +39,8 @@ const FormRenderer: React.FC<FormRendererProps> = (props: any) => {
       return <BannerForm {...props} />;
     case "News":
       return <NewsForm {...props} />;
+    case "Order":
+      return <OrderForm {...props} />;
     case "Products":
       return <ProductsForm {...props} />;
     case "Category":
